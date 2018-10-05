@@ -264,6 +264,7 @@ var DateComponent = /** @class */ (function () {
         this.dateList = [];
     }
     DateComponent.prototype.ngOnInit = function () {
+        console.log("Angular Date Application 0.1");
         var getDate = localStorage.getItem("data");
         if (getDate) {
             this.newDate = getDate;
@@ -409,7 +410,7 @@ module.exports = "<div class=\"app-list-element\" (click)=\"onChooseDate()\">\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".app-list-element {\n  width: 100%;\n  min-height: 48px;\n  margin: 16px;\n  padding: 8px;\n  text-align: center;\n  line-height: 32px;\n  color: white;\n  background: #00000075;\n  border-radius: 24px;\n  transition: 500ms; }\n  .app-list-element:hover {\n    font-size: 17px;\n    cursor: pointer; }\n"
+module.exports = ".app-list-element {\n  width: 100%;\n  min-height: 48px;\n  margin: 16px 0;\n  padding: 8px 16px;\n  text-align: center;\n  line-height: 32px;\n  color: white;\n  background: #00000075;\n  border-radius: 24px;\n  transition: 500ms; }\n  .app-list-element:hover {\n    font-size: 17px;\n    cursor: pointer; }\n"
 
 /***/ }),
 
@@ -483,7 +484,7 @@ module.exports = "<div class=\"app-list\">\r\n  <span class=\"app-list__title\">
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".app-list {\n  display: flex;\n  flex-direction: column;\n  padding-top: 50px;\n  align-items: center; }\n  .app-list__title {\n    text-align: center;\n    font-size: 24px;\n    color: white; }\n  .message {\n  width: 100%;\n  min-height: 48px;\n  margin: 16px;\n  padding: 8px;\n  text-align: center;\n  line-height: 32px;\n  color: white;\n  background: #00000075;\n  border-radius: 24px;\n  transition: 500ms; }\n"
+module.exports = ".app-list {\n  display: flex;\n  flex-direction: column;\n  padding-top: 50px;\n  align-items: center; }\n  .app-list__title {\n    text-align: center;\n    font-size: 24px;\n    color: white; }\n  .message {\n  width: 90%;\n  min-height: 48px;\n  margin: 0 auto;\n  padding: 8px;\n  text-align: center;\n  line-height: 32px;\n  color: white;\n  background: #00000075;\n  border-radius: 24px;\n  transition: 500ms; }\n"
 
 /***/ }),
 
