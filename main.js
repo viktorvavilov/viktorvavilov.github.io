@@ -53,7 +53,7 @@ var routes = [
         component: _components_list_component_list_component__WEBPACK_IMPORTED_MODULE_3__["ListComponent"],
     },
     {
-        path: '*',
+        path: '',
         component: _components_date_component_date_component__WEBPACK_IMPORTED_MODULE_2__["DateComponent"],
     },
 ];
@@ -287,26 +287,26 @@ var DateComponent = /** @class */ (function () {
         this.newDate = event;
         setInterval(function () {
             _this.calculate(_this.newDate);
-            localStorage.removeItem("data");
-            localStorage.setItem("data", _this.newDate);
         }, 1000);
+        localStorage.removeItem("data");
+        localStorage.setItem("data", this.newDate);
     };
     DateComponent.prototype.setToStore = function () {
-        console.log("=== Added to storage ===");
+        // console.log("=== Added to storage ===");
         this.dateList.push(this.newDate);
         localStorage.setItem("lastDate", JSON.stringify(this.dateList));
     };
     DateComponent.prototype.getFromStore = function () {
         this.dateList = JSON.parse(localStorage.getItem("lastDate"));
         if (!this.dateList) {
-            console.log("=== Storage is empty ===");
+            // console.log("=== Storage is empty ===");
         }
         else {
-            console.log("=== Get from storage ===");
+            // console.log("=== Get from storage ===");
         }
     };
     DateComponent.prototype.clearStore = function () {
-        console.log("=== Storage is clear ===");
+        // console.log("=== Storage is clear ===");
         localStorage.removeItem("lastDate");
     };
     DateComponent = __decorate([
@@ -533,10 +533,10 @@ var ListComponent = /** @class */ (function () {
         }
         else {
             // console.log("=== Get from storage ===");
+            dateList.forEach(function (element) {
+                _this.dates.push({ date: element });
+            });
         }
-        dateList.forEach(function (element) {
-            _this.dates.push({ date: element });
-        });
     };
     ListComponent.prototype.setFromStore = function (date) {
         localStorage.setItem("data", date);
