@@ -37,6 +37,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _components_date_component_date_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/date.component/date.component */ "./src/app/components/date.component/date.component.ts");
 /* harmony import */ var _components_list_component_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/list.component/list.component */ "./src/app/components/list.component/list.component.ts");
+/* harmony import */ var _components_about_component_about_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/about.component/about.component */ "./src/app/components/about.component/about.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -47,10 +48,15 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     {
         path: 'dates',
         component: _components_list_component_list_component__WEBPACK_IMPORTED_MODULE_3__["ListComponent"],
+    },
+    {
+        path: 'about',
+        component: _components_about_component_about_component__WEBPACK_IMPORTED_MODULE_4__["AboutComponent"],
     },
     {
         path: '',
@@ -94,20 +100,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_app_component_app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/app.component/app.component */ "./src/app/components/app.component/app.component.ts");
 /* harmony import */ var _components_date_component_date_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/date.component/date.component */ "./src/app/components/date.component/date.component.ts");
 /* harmony import */ var _components_header_component_header_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/header.component/header.component */ "./src/app/components/header.component/header.component.ts");
-/* harmony import */ var _components_list_component_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/list.component/list.component */ "./src/app/components/list.component/list.component.ts");
-/* harmony import */ var _components_list_element_component_list_element_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/list-element.component/list-element.component */ "./src/app/components/list-element.component/list-element.component.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! primeng/calendar */ "./node_modules/primeng/calendar.js");
-/* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(primeng_calendar__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var primeng_accordion__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! primeng/accordion */ "./node_modules/primeng/accordion.js");
-/* harmony import */ var primeng_accordion__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(primeng_accordion__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _components_about_component_about_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/about.component/about.component */ "./src/app/components/about.component/about.component.ts");
+/* harmony import */ var _components_list_component_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/list.component/list.component */ "./src/app/components/list.component/list.component.ts");
+/* harmony import */ var _components_list_element_component_list_element_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/list-element.component/list-element.component */ "./src/app/components/list-element.component/list-element.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! primeng/calendar */ "./node_modules/primeng/calendar.js");
+/* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(primeng_calendar__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var primeng_accordion__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! primeng/accordion */ "./node_modules/primeng/accordion.js");
+/* harmony import */ var primeng_accordion__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(primeng_accordion__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -129,22 +137,121 @@ var AppModule = /** @class */ (function () {
                 _components_app_component_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
                 _components_date_component_date_component__WEBPACK_IMPORTED_MODULE_4__["DateComponent"],
                 _components_header_component_header_component__WEBPACK_IMPORTED_MODULE_5__["HeaderComponent"],
-                _components_list_component_list_component__WEBPACK_IMPORTED_MODULE_6__["ListComponent"],
-                _components_list_element_component_list_element_component__WEBPACK_IMPORTED_MODULE_7__["ListElementComponent"]
+                _components_about_component_about_component__WEBPACK_IMPORTED_MODULE_6__["AboutComponent"],
+                _components_list_component_list_component__WEBPACK_IMPORTED_MODULE_7__["ListComponent"],
+                _components_list_element_component_list_element_component__WEBPACK_IMPORTED_MODULE_8__["ListElementComponent"]
             ],
             imports: [
                 _app_routing_app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                primeng_calendar__WEBPACK_IMPORTED_MODULE_9__["CalendarModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
-                primeng_accordion__WEBPACK_IMPORTED_MODULE_10__["AccordionModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"],
+                primeng_calendar__WEBPACK_IMPORTED_MODULE_10__["CalendarModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
+                primeng_accordion__WEBPACK_IMPORTED_MODULE_11__["AccordionModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"],
             ],
             providers: [],
             bootstrap: [_components_app_component_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/about.component/about.component.html":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/about.component/about.component.html ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"app-about\">\r\n  <span [@firstAnimation]='stateText' class=\"app-about__text\">\"Most people think time is like a river that flows swift and sure in one direction. But I have seen the face of time, and I can tell you: they are wrong. Time is an ocean in a storm. You may wonder who I am or why I say this. Sit down and I will tell you a tale like none you have ever heard.\" </span>\r\n  <span [@secondAnimation]='stateName' class=\"app-about__name\">— Son of Shahraman</span>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/about.component/about.component.scss":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/about.component/about.component.scss ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".app-about {\n  padding-top: 60px;\n  color: white;\n  width: 70%;\n  margin: 0 auto;\n  font-style: italic;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center; }\n  .app-about__text {\n    font-size: 24px; }\n  .app-about__name {\n    font-size: 20px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/components/about.component/about.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/components/about.component/about.component.ts ***!
+  \***************************************************************/
+/*! exports provided: AboutComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutComponent", function() { return AboutComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AboutComponent = /** @class */ (function () {
+    function AboutComponent() {
+        this.stateText = 'hidden';
+        this.stateName = 'hidden';
+    }
+    AboutComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.animate();
+        }, 1000);
+    };
+    AboutComponent.prototype.animate = function () {
+        var _this = this;
+        this.stateText = (this.stateText === 'hidden' ? 'shown' : 'hidden');
+        setTimeout(function () {
+            _this.stateName = (_this.stateName === 'hidden' ? 'shown' : 'hidden');
+        }, 1500);
+    };
+    AboutComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-about',
+            template: __webpack_require__(/*! ./about.component.html */ "./src/app/components/about.component/about.component.html"),
+            animations: [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('firstAnimation', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('hidden', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
+                        opacity: 0,
+                    })),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('shown', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
+                        opacity: 1,
+                    })),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('hidden => shown', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('1000ms ease-in')),
+                ]),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('secondAnimation', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('hidden', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
+                        opacity: 0,
+                    })),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('shown', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
+                        opacity: 1,
+                    })),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('hidden => shown', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('1000ms ease-in')),
+                ]),
+            ],
+            styles: [__webpack_require__(/*! ./about.component.scss */ "./src/app/components/about.component/about.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], AboutComponent);
+    return AboutComponent;
 }());
 
 
@@ -264,7 +371,7 @@ var DateComponent = /** @class */ (function () {
         this.dateList = [];
     }
     DateComponent.prototype.ngOnInit = function () {
-        console.log("Angular Date Application 0.1");
+        console.log("Angular Date Application 0.1.1");
         var getDate = localStorage.getItem("data");
         if (getDate) {
             this.newDate = getDate;
@@ -337,7 +444,7 @@ var DateComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"app-header\">\r\n  <a class=\"app-header__route\" [routerLink]=\"['./']\">Home Page</a>\r\n  <a class=\"app-header__route\" [routerLink]=\"['./dates']\">Date List</a>\r\n</div>"
+module.exports = "<div class=\"app-header\">\r\n  <a class=\"app-header__route\" [routerLink]=\"['./']\">Home Page</a>\r\n  <a class=\"app-header__route\" [routerLink]=\"['./dates']\">Date List</a>\r\n  <a class=\"app-header__route\" [routerLink]=\"['./about']\">About</a>\r\n</div>"
 
 /***/ }),
 
