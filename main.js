@@ -388,6 +388,7 @@ var DateComponent = /** @class */ (function () {
             this.newDate = getDate;
             this.valueChange(this.newDate);
         }
+        this.getFromStore();
     };
     DateComponent.prototype.calculate = function (date) {
         var timeStart = new Date().getTime();
@@ -422,8 +423,12 @@ var DateComponent = /** @class */ (function () {
     };
     DateComponent.prototype.getFromStore = function () {
         this.dateList = JSON.parse(localStorage.getItem("lastDate"));
+        if (!this.dateList) {
+            this.dateList = [];
+        }
     };
     DateComponent.prototype.clearStore = function () {
+        this.dateList = [];
         localStorage.removeItem("lastDate");
     };
     DateComponent = __decorate([
