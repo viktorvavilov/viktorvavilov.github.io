@@ -109,12 +109,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var primeng_accordion__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! primeng/accordion */ "./node_modules/primeng/accordion.js");
 /* harmony import */ var primeng_accordion__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(primeng_accordion__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _services_store_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./services/store.service */ "./src/app/services/store.service.ts");
+/* harmony import */ var _services_calculate_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/calculate.service */ "./src/app/services/calculate.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -149,7 +153,10 @@ var AppModule = /** @class */ (function () {
                 primeng_accordion__WEBPACK_IMPORTED_MODULE_11__["AccordionModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"],
             ],
-            providers: [],
+            providers: [
+                _services_store_service__WEBPACK_IMPORTED_MODULE_13__["StoreService"],
+                _services_calculate_service__WEBPACK_IMPORTED_MODULE_14__["CalculateService"]
+            ],
             bootstrap: [_components_app_component_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
@@ -323,7 +330,7 @@ var AppComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"date-picker\">\n  <span class=\"date-picker__text\">Choose date: </span>\n  <p-calendar [showTime]=\"true\" [(ngModel)]=\"model\" (ngModelChange)=\"valueChange($event)\" ></p-calendar>\n</div>\n<div class=\"date\">\n  <div class=\"date__element\" *ngIf='date.days > 0'>\n    <div class=\"element__time\">{{date.days}}</div>\n    <div class=\"element__title\">Days</div>\n  </div>\n  <div class=\"date__element\" *ngIf='date.hours > 0'>\n    <div class=\"element__time\">{{date.hours}}</div>\n    <div class=\"element__title\">Hours</div>\n  </div>\n  <div class=\"date__element\">\n    <div class=\"element__time\">{{date.minutes}}</div>\n    <div class=\"element__title\">Minutes</div>\n  </div>\n  <div class=\"date__element\">\n    <div class=\"element__time\">{{date.seconds}}</div>\n    <div class=\"element__title\">Seconds</div>\n  </div>\n</div>\n<div class=\"bottom\">\n  <!-- <button (click)=\"setToStore()\">Set</button>\n  <button (click)=\"getFromStore()\">Get</button>\n  <button (click)=\"clearStore()\">Clear</button> -->\n  <button class=\"bottom__button\" (click)=\"setToStore()\">Remember current date</button>\n  <div class=\"bottom__text\">\n    <span>{{newDate | date:'fullDate'}} </span>\n    <span>{{newDate | date:'shortTime'}}</span>\n  </div>\n</div>\n"
+module.exports = "<div class=\"date-picker\">\n  <span class=\"date-picker__text\">Choose date: </span>\n  <p-calendar [showTime]=\"true\" [(ngModel)]=\"model\" (ngModelChange)=\"valueChange($event)\" ></p-calendar>\n</div>\n<div class=\"date\">\n  <div class=\"date__element\" *ngIf='date.days > 0'>\n    <div class=\"element__time\">{{date.days}}</div>\n    <div class=\"element__title\">Days</div>\n  </div>\n  <div class=\"date__element\" *ngIf='date.hours > 0'>\n    <div class=\"element__time\">{{date.hours}}</div>\n    <div class=\"element__title\">Hours</div>\n  </div>\n  <div class=\"date__element\">\n    <div class=\"element__time\">{{date.minutes}}</div>\n    <div class=\"element__title\">Minutes</div>\n  </div>\n  <div class=\"date__element\">\n    <div class=\"element__time\">{{date.seconds}}</div>\n    <div class=\"element__title\">Seconds</div>\n  </div>\n</div>\n<div class=\"bottom\">\n  <button class=\"bottom__button\" (click)=\"setToStore()\">Remember current date</button>\n  <div class=\"bottom__text\">\n    <span>{{newDate | date:'fullDate'}} </span>\n    <span>{{newDate | date:'shortTime'}}</span>\n  </div>\n  <button class=\"bottom__button\" (click)=\"clearStore()\">Clear all dates</button>\n</div>\n"
 
 /***/ }),
 
@@ -334,7 +341,7 @@ module.exports = "<div class=\"date-picker\">\n  <span class=\"date-picker__text
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".date {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  align-items: center;\n  height: 250px;\n  max-width: 600px;\n  margin: 0 auto;\n  height: 60vh; }\n  .date__element {\n    width: 128px;\n    height: 128px;\n    margin: 5px;\n    color: white;\n    background: #00000075;\n    border-radius: 24px;\n    text-align: center;\n    vertical-align: middle;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n    transition: 500ms; }\n  .date-picker {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-top: 70px; }\n  .date-picker__text {\n    color: white;\n    font-size: 18px;\n    margin-right: 10px; }\n  .bottom {\n  z-index: 200;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  width: 100%;\n  flex-direction: column;\n  align-items: center; }\n  .bottom__button {\n    line-height: 32px;\n    height: 32px;\n    padding: 0 10px;\n    border-radius: 8px;\n    color: white;\n    background: #00000050;\n    border: 0;\n    font-size: 18px;\n    min-width: 64px;\n    margin: 10px; }\n  .bottom__button:hover {\n      background: #00000035;\n      cursor: pointer; }\n  .bottom__text {\n    color: white;\n    font-size: 18px;\n    margin-bottom: 20px;\n    text-align: center; }\n  .element__time {\n  font-size: 64px;\n  line-height: 54px; }\n"
+module.exports = ".date {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  align-items: center;\n  height: 250px;\n  max-width: 600px;\n  margin: 0 auto;\n  height: 60vh; }\n  .date__element {\n    width: 128px;\n    height: 128px;\n    margin: 5px;\n    color: white;\n    background: #00000075;\n    border-radius: 24px;\n    text-align: center;\n    vertical-align: middle;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n    transition: 500ms; }\n  .date-picker {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-top: 70px; }\n  .date-picker__text {\n    color: white;\n    font-size: 18px;\n    margin-right: 10px; }\n  .bottom {\n  z-index: 200;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  width: 100%;\n  flex-direction: column;\n  align-items: center; }\n  .bottom__button {\n    line-height: 32px;\n    height: 32px;\n    padding: 0 10px;\n    border-radius: 8px;\n    color: white;\n    background: #00000050;\n    border: 0;\n    font-size: 18px;\n    min-width: 64px;\n    margin: 10px; }\n  .bottom__button:hover {\n      background: #00000035;\n      cursor: pointer; }\n  .bottom__text {\n    color: white;\n    font-size: 18px;\n    text-align: center; }\n  .element__time {\n  font-size: 64px;\n  line-height: 54px; }\n"
 
 /***/ }),
 
@@ -350,6 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateComponent", function() { return DateComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _services_calculate_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/calculate.service */ "./src/app/services/calculate.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -361,11 +369,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var DateComponent = /** @class */ (function () {
-    function DateComponent() {
-        // public hours: number;
-        // public minutes: number;
-        // public seconds: number;
+    function DateComponent(calculateService) {
+        this.calculateService = calculateService;
         this.date = {
             days: 0,
             hours: 0,
@@ -375,7 +382,7 @@ var DateComponent = /** @class */ (function () {
         this.dateList = [];
     }
     DateComponent.prototype.ngOnInit = function () {
-        console.log("Angular Date Application 0.1.1");
+        console.log("Angular Date Application 0.1.3 revert");
         var getDate = localStorage.getItem("data");
         if (getDate) {
             this.newDate = getDate;
@@ -399,7 +406,6 @@ var DateComponent = /** @class */ (function () {
         }
         this.date.minutes = Math.floor(minDiff - 60 * Math.floor(hDiff));
         this.date.seconds = Math.floor(secDiff % 60);
-        console.log(Math.floor(days));
     };
     DateComponent.prototype.valueChange = function (event) {
         var _this = this;
@@ -411,21 +417,13 @@ var DateComponent = /** @class */ (function () {
         localStorage.setItem("data", this.newDate);
     };
     DateComponent.prototype.setToStore = function () {
-        // console.log("=== Added to storage ===");
         this.dateList.push(this.newDate);
         localStorage.setItem("lastDate", JSON.stringify(this.dateList));
     };
     DateComponent.prototype.getFromStore = function () {
         this.dateList = JSON.parse(localStorage.getItem("lastDate"));
-        if (!this.dateList) {
-            // console.log("=== Storage is empty ===");
-        }
-        else {
-            // console.log("=== Get from storage ===");
-        }
     };
     DateComponent.prototype.clearStore = function () {
-        // console.log("=== Storage is clear ===");
         localStorage.removeItem("lastDate");
     };
     DateComponent = __decorate([
@@ -439,7 +437,7 @@ var DateComponent = /** @class */ (function () {
             ],
             styles: [__webpack_require__(/*! ./date.component.scss */ "./src/app/components/date.component/date.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_calculate_service__WEBPACK_IMPORTED_MODULE_2__["CalculateService"]])
     ], DateComponent);
     return DateComponent;
 }());
@@ -466,7 +464,7 @@ module.exports = "<div class=\"app-header\">\r\n  <a class=\"app-header__route\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".app-header {\n  width: 100%;\n  height: 60px;\n  background-color: rgba(0, 0, 0, 0.5);\n  position: absolute;\n  z-index: 200;\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n  .app-header__route {\n    line-height: 48px;\n    height: 48px;\n    padding: 0 10px;\n    border-radius: 8px;\n    color: white;\n    background: #00000050;\n    font-size: 18px; }\n  .app-header__route:hover {\n      background: #00000035;\n      cursor: pointer; }\n"
+module.exports = ".app-header {\n  width: 100%;\n  height: 60px;\n  background-color: rgba(0, 0, 0, 0.5);\n  position: fixed;\n  z-index: 200;\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n  .app-header__route {\n    line-height: 48px;\n    height: 48px;\n    padding: 0 10px;\n    border-radius: 8px;\n    color: white;\n    background: #00000050;\n    font-size: 18px; }\n  .app-header__route:hover {\n      background: #00000035;\n      cursor: pointer; }\n"
 
 /***/ }),
 
@@ -618,6 +616,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListComponent", function() { return ListComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _services_store_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/store.service */ "./src/app/services/store.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -629,8 +628,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var ListComponent = /** @class */ (function () {
-    function ListComponent() {
+    function ListComponent(storeService) {
+        this.storeService = storeService;
         this.dates = [];
         this.state = 'hidden';
     }
@@ -648,21 +649,15 @@ var ListComponent = /** @class */ (function () {
         var _this = this;
         var dateList = JSON.parse(localStorage.getItem("lastDate"));
         if (!dateList) {
-            // console.log("=== Storage is empty ===");
         }
         else {
-            // console.log("=== Get from storage ===");
             dateList.forEach(function (element) {
                 _this.dates.push({ date: element });
             });
         }
     };
-    ListComponent.prototype.setFromStore = function (date) {
-        localStorage.setItem("data", date);
-    };
     ListComponent.prototype.onChooseDate = function (date) {
-        // console.log("New date is " + date);
-        this.setFromStore(date);
+        this.storeService.setToStore(date);
         this.animate();
     };
     ListComponent = __decorate([
@@ -682,9 +677,125 @@ var ListComponent = /** @class */ (function () {
             ],
             styles: [__webpack_require__(/*! ./list.component.scss */ "./src/app/components/list.component/list.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_store_service__WEBPACK_IMPORTED_MODULE_2__["StoreService"]])
     ], ListComponent);
     return ListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/calculate.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/services/calculate.service.ts ***!
+  \***********************************************/
+/*! exports provided: CalculateService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CalculateService", function() { return CalculateService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CalculateService = /** @class */ (function () {
+    function CalculateService() {
+        this.date = {
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        };
+        this.dateNull = {
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        };
+    }
+    CalculateService.prototype.calculate = function (date) {
+        var timeStart = new Date().getTime();
+        var timeEnd = new Date(date).getTime();
+        var hourDiff = timeEnd - timeStart;
+        var minDiff = hourDiff / 60 / 1000;
+        var secDiff = hourDiff / 1000;
+        var hDiff = hourDiff / 3600 / 1000;
+        var days = hDiff / 24;
+        this.date.days = Math.floor(days);
+        if (this.date.days > 0) {
+            this.date.hours = Math.floor(hDiff - (this.date.days * 24));
+        }
+        else {
+            this.date.hours = Math.floor(hDiff);
+        }
+        this.date.minutes = Math.floor(minDiff - 60 * Math.floor(hDiff));
+        this.date.seconds = Math.floor(secDiff % 60);
+        if (this.date.seconds < 0) {
+            return this.dateNull;
+        }
+        else {
+            return this.date;
+        }
+    };
+    CalculateService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], CalculateService);
+    return CalculateService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/store.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/store.service.ts ***!
+  \*******************************************/
+/*! exports provided: StoreService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreService", function() { return StoreService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var StoreService = /** @class */ (function () {
+    function StoreService() {
+    }
+    StoreService.prototype.getLastFromStore = function () {
+        return JSON.parse(localStorage.getItem("lastDate"));
+    };
+    StoreService.prototype.setToStore = function (date) {
+        localStorage.setItem("data", date);
+    };
+    StoreService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], StoreService);
+    return StoreService;
 }());
 
 
