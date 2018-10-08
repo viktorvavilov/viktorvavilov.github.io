@@ -178,7 +178,7 @@ module.exports = "<div class=\"app-about\">\r\n  <span [@firstAnimation]='stateT
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".app-about {\n  padding-top: 60px;\n  color: white;\n  width: 70%;\n  margin: 0 auto;\n  font-style: italic;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center; }\n  .app-about__text {\n    font-size: 24px; }\n  .app-about__name {\n    font-size: 20px; }\n"
+module.exports = ".app-about {\n  padding-top: 80px;\n  color: white;\n  width: 70%;\n  margin: 0 auto;\n  font-style: italic;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center; }\n  .app-about__text {\n    font-size: 24px; }\n  .app-about__name {\n    font-size: 20px; }\n"
 
 /***/ }),
 
@@ -265,7 +265,7 @@ var AboutComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"bg\">\n  <app-header></app-header>\n  <router-outlet></router-outlet>\n  <!-- <app-date></app-date> -->\n  <!-- <app-list></app-list> -->\n</div>\n<img class=\"img\" src=\"https://img.rezdy.com/PRODUCT_IMAGE/6172/Sunset_20M_lba__20SC_2012_12_04_811_20_preview.jpeg_lg.jpg\" alt=\"\">"
+module.exports = "<div class=\"bg\">\n  <app-header></app-header>\n  <router-outlet></router-outlet>\n  <!-- <app-date></app-date> -->\n  <!-- <app-list></app-list> -->\n</div>\n<div class=\"wrap\">\n  <img class=\"wrap__img\" src=\"https://img.rezdy.com/PRODUCT_IMAGE/6172/Sunset_20M_lba__20SC_2012_12_04_811_20_preview.jpeg_lg.jpg\" alt=\"\">\n</div>"
 
 /***/ }),
 
@@ -276,7 +276,7 @@ module.exports = "<div class=\"bg\">\n  <app-header></app-header>\n  <router-out
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "html, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n* {\n  outline: none; }\n\n.bg {\n  z-index: 20;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: #2c3e50;\n  background: linear-gradient(#fd736cab, #2c3e50); }\n\n.img {\n  position: absolute;\n  z-index: 10;\n  -webkit-filter: blur(20px);\n          filter: blur(20px);\n  width: 100%;\n  height: 100%; }\n"
+module.exports = "html, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n* {\n  outline: none; }\n\n.bg {\n  z-index: 20;\n  position: absolute;\n  width: 100%;\n  /* background: #2c3e50; */\n  /* background: linear-gradient(#fd736cab, #2c3e50); */\n  top: 0;\n  /* height: auto; */ }\n\n.wrap {\n  background: #2c3e50;\n  background: linear-gradient(#fd736cab, #2c3e50);\n  position: fixed;\n  width: 100%;\n  height: 100%; }\n\n.wrap__img {\n    position: absolute;\n    z-index: 10;\n    -webkit-filter: blur(20px);\n            filter: blur(20px);\n    width: 100%;\n    height: 100%;\n    top: 0; }\n\n.img {\n  position: absolute;\n  z-index: 10;\n  -webkit-filter: blur(20px);\n          filter: blur(20px);\n  width: 100%;\n  height: 100%;\n  top: 0; }\n"
 
 /***/ }),
 
@@ -323,7 +323,7 @@ var AppComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"date-picker\">\n  <span class=\"date-picker__text\">Choose date: </span>\n  <p-calendar [showTime]=\"true\" [(ngModel)]=\"model\" (ngModelChange)=\"valueChange($event)\" ></p-calendar>\n</div>\n<div class=\"date\">\n  <!-- <div class=\"date__element\">\n    <div class=\"element__time\">{{day}}</div>\n    <div class=\"element__title\">Days</div>\n  </div> -->\n  <div class=\"date__element\">\n    <div class=\"element__time\">{{date.hours}}</div>\n    <div class=\"element__title\">Hours</div>\n  </div>\n  <div class=\"date__element\">\n    <div class=\"element__time\">{{date.minutes}}</div>\n    <div class=\"element__title\">Minutes</div>\n  </div>\n  <div class=\"date__element\">\n    <div class=\"element__time\">{{date.seconds}}</div>\n    <div class=\"element__title\">Seconds</div>\n  </div>\n</div>\n<div class=\"bottom\">\n  <!-- <button (click)=\"setToStore()\">Set</button>\n  <button (click)=\"getFromStore()\">Get</button>\n  <button (click)=\"clearStore()\">Clear</button> -->\n  <button class=\"bottom__button\" (click)=\"setToStore()\">Remember current date</button>\n  <div class=\"bottom__text\">\n    <span>{{newDate | date:'fullDate'}} </span>\n    <span>{{newDate | date:'shortTime'}}</span>\n  </div>\n</div>\n"
+module.exports = "<div class=\"date-picker\">\n  <span class=\"date-picker__text\">Choose date: </span>\n  <p-calendar [showTime]=\"true\" [(ngModel)]=\"model\" (ngModelChange)=\"valueChange($event)\" ></p-calendar>\n</div>\n<div class=\"date\">\n  <div class=\"date__element\" *ngIf='date.days > 0'>\n    <div class=\"element__time\">{{date.days}}</div>\n    <div class=\"element__title\">Days</div>\n  </div>\n  <div class=\"date__element\" *ngIf='date.hours > 0'>\n    <div class=\"element__time\">{{date.hours}}</div>\n    <div class=\"element__title\">Hours</div>\n  </div>\n  <div class=\"date__element\">\n    <div class=\"element__time\">{{date.minutes}}</div>\n    <div class=\"element__title\">Minutes</div>\n  </div>\n  <div class=\"date__element\">\n    <div class=\"element__time\">{{date.seconds}}</div>\n    <div class=\"element__title\">Seconds</div>\n  </div>\n</div>\n<div class=\"bottom\">\n  <!-- <button (click)=\"setToStore()\">Set</button>\n  <button (click)=\"getFromStore()\">Get</button>\n  <button (click)=\"clearStore()\">Clear</button> -->\n  <button class=\"bottom__button\" (click)=\"setToStore()\">Remember current date</button>\n  <div class=\"bottom__text\">\n    <span>{{newDate | date:'fullDate'}} </span>\n    <span>{{newDate | date:'shortTime'}}</span>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -334,7 +334,7 @@ module.exports = "<div class=\"date-picker\">\n  <span class=\"date-picker__text
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".date {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  height: 250px;\n  max-width: 512px;\n  margin: 0 auto;\n  height: 60vh; }\n  .date__element {\n    width: 128px;\n    height: 128px;\n    color: white;\n    background: #00000075;\n    border-radius: 24px;\n    text-align: center;\n    vertical-align: middle;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n    transition: 500ms; }\n  .date__element:hover {\n      width: 138px;\n      height: 138px;\n      font-size: 24px;\n      cursor: pointer; }\n  .date-picker {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-top: 50px; }\n  .date-picker__text {\n    color: white;\n    font-size: 18px;\n    margin-right: 10px; }\n  .bottom {\n  z-index: 200;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  width: 100%;\n  flex-direction: column;\n  align-items: center; }\n  .bottom__button {\n    line-height: 32px;\n    height: 32px;\n    padding: 0 10px;\n    border-radius: 8px;\n    color: white;\n    background: #00000050;\n    border: 0;\n    font-size: 18px;\n    min-width: 64px;\n    margin: 10px; }\n  .bottom__button:hover {\n      background: #00000035;\n      cursor: pointer; }\n  .bottom__text {\n    color: white;\n    font-size: 18px;\n    margin-bottom: 20px;\n    text-align: center; }\n  .element__time {\n  font-size: 64px;\n  line-height: 54px; }\n"
+module.exports = ".date {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  align-items: center;\n  height: 250px;\n  max-width: 600px;\n  margin: 0 auto;\n  height: 60vh; }\n  .date__element {\n    width: 128px;\n    height: 128px;\n    margin: 5px;\n    color: white;\n    background: #00000075;\n    border-radius: 24px;\n    text-align: center;\n    vertical-align: middle;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n    transition: 500ms; }\n  .date-picker {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-top: 70px; }\n  .date-picker__text {\n    color: white;\n    font-size: 18px;\n    margin-right: 10px; }\n  .bottom {\n  z-index: 200;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  width: 100%;\n  flex-direction: column;\n  align-items: center; }\n  .bottom__button {\n    line-height: 32px;\n    height: 32px;\n    padding: 0 10px;\n    border-radius: 8px;\n    color: white;\n    background: #00000050;\n    border: 0;\n    font-size: 18px;\n    min-width: 64px;\n    margin: 10px; }\n  .bottom__button:hover {\n      background: #00000035;\n      cursor: pointer; }\n  .bottom__text {\n    color: white;\n    font-size: 18px;\n    margin-bottom: 20px;\n    text-align: center; }\n  .element__time {\n  font-size: 64px;\n  line-height: 54px; }\n"
 
 /***/ }),
 
@@ -363,7 +363,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var DateComponent = /** @class */ (function () {
     function DateComponent() {
+        // public hours: number;
+        // public minutes: number;
+        // public seconds: number;
         this.date = {
+            days: 0,
             hours: 0,
             minutes: 0,
             seconds: 0
@@ -385,10 +389,17 @@ var DateComponent = /** @class */ (function () {
         var minDiff = hourDiff / 60 / 1000;
         var secDiff = hourDiff / 1000;
         var hDiff = hourDiff / 3600 / 1000;
-        var day = hDiff / 24;
-        this.date.hours = Math.floor(hDiff);
-        this.date.minutes = Math.floor(minDiff - 60 * this.date.hours);
+        var days = hDiff / 24;
+        this.date.days = Math.floor(days);
+        if (this.date.days > 0) {
+            this.date.hours = Math.floor(hDiff - (this.date.days * 24));
+        }
+        else {
+            this.date.hours = Math.floor(hDiff);
+        }
+        this.date.minutes = Math.floor(minDiff - 60 * Math.floor(hDiff));
         this.date.seconds = Math.floor(secDiff % 60);
+        console.log(Math.floor(days));
     };
     DateComponent.prototype.valueChange = function (event) {
         var _this = this;
@@ -455,7 +466,7 @@ module.exports = "<div class=\"app-header\">\r\n  <a class=\"app-header__route\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".app-header {\n  width: 100%;\n  height: 42px;\n  background-color: rgba(0, 0, 0, 0.5);\n  position: absolute;\n  z-index: 200;\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n  .app-header__route {\n    line-height: 32px;\n    height: 32px;\n    padding: 0 10px;\n    border-radius: 8px;\n    color: white;\n    background: #00000050; }\n  .app-header__route:hover {\n      background: #00000035;\n      cursor: pointer; }\n"
+module.exports = ".app-header {\n  width: 100%;\n  height: 60px;\n  background-color: rgba(0, 0, 0, 0.5);\n  position: absolute;\n  z-index: 200;\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n  .app-header__route {\n    line-height: 48px;\n    height: 48px;\n    padding: 0 10px;\n    border-radius: 8px;\n    color: white;\n    background: #00000050;\n    font-size: 18px; }\n  .app-header__route:hover {\n      background: #00000035;\n      cursor: pointer; }\n"
 
 /***/ }),
 
@@ -591,7 +602,7 @@ module.exports = "<div class=\"app-list\">\r\n  <span class=\"app-list__title\">
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".app-list {\n  display: flex;\n  flex-direction: column;\n  padding-top: 50px;\n  align-items: center; }\n  .app-list__title {\n    text-align: center;\n    font-size: 24px;\n    color: white; }\n  .message {\n  width: 90%;\n  min-height: 48px;\n  margin: 0 auto;\n  padding: 8px;\n  text-align: center;\n  line-height: 32px;\n  color: white;\n  background: #00000075;\n  border-radius: 24px;\n  transition: 500ms; }\n"
+module.exports = ".app-list {\n  display: flex;\n  flex-direction: column;\n  padding-top: 70px;\n  align-items: center; }\n  .app-list__title {\n    text-align: center;\n    font-size: 24px;\n    color: white; }\n  .message {\n  width: 90%;\n  min-height: 48px;\n  margin: 0 auto;\n  padding: 8px;\n  text-align: center;\n  line-height: 32px;\n  color: white;\n  background: #00000075;\n  border-radius: 24px;\n  transition: 500ms; }\n"
 
 /***/ }),
 
@@ -740,7 +751,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Workspace\AngDate\angdate\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Viktor_Vavilov\Documents\GitHub\ang-date\src\main.ts */"./src/main.ts");
 
 
 /***/ })
